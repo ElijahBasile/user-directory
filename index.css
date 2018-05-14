@@ -21,6 +21,16 @@ input,
 button {
     font-family: 'Times';
     font-size: 30px;
+    text-align: center;
+}
+
+button {
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 5px 5px;
+    font-weight: bold;
+    display: inline-block;
 }
 
 p {
