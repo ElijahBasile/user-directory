@@ -5,11 +5,12 @@ const handleSubmit = function(ev) {
     const userName = form.userName.value
     const users = document.querySelector('#users')
     const age = form.age.value;
-    heading.textContent = document.querySelector('input').value
+    const favcolor = form.favcolor.value;
 
     const p = document.createElement('p')
-    p.textContent = `${userName},${age}`
-    user.appendChild(p)
+    p.textContent = `${userName}, ${age}, ${favcolor}`
+    p.style.backgroundColor = favcolor
+    users.appendChild(p)
 
     form.reset()
     form.userName.focus()

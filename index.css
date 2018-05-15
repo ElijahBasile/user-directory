@@ -10,11 +10,14 @@ body {
     font-family: 'Bitter', serif;
     background-color: gray;
     color: white;
-    text-align: center;
 }
 
 h1 {
     font-size: 100px;
+}
+
+label {
+    width: 100px;
 }
 
 input, 
