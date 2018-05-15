@@ -19,9 +19,8 @@ const renderListItem = function(item) {
 }
 const renderList = function(userName,age,favcolor) {
     const list = document.createElement('ul')
-    if (userName !== '') {
-        list.appendChild(renderListItem(userName))
-    } 
+
+    list.appendChild(renderListItem(userName))
     if (age !== '') {
         list.appendChild(renderListItem(age))
     }
@@ -44,7 +43,13 @@ const handleSubmit = function(ev) {
     const users = document.querySelector('#users')
     const age = form.age.value;
     const favcolor = form.favcolor.value;
-    users.appendChild(renderList(userName,age,favcolor));
+    if(userName !== '' && isNaN(parseInt(userName))){
+        warning.textContent = ''
+        users.appendChild(renderList(userName,age,favcolor));
+    } else {
+        const warning = document.querySelector('#warning')
+        warning.textContent = 'Please enter a valid name for the directory.'
+    }
     form.reset()
     form.userName.focus()
 
