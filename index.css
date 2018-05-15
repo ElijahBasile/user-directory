@@ -8,8 +8,18 @@
 
 body {
     font-family: 'Bitter', serif;
-    background-color: gray;
+    background-image: url("https://wallpapercave.com/wp/VGbYEP3.png");
     color: white;
+    border-spacing: 20px;
+    border-radius: 5%;
+    align-content: right;
+    padding: 10px;
+    font-size: 15px;
+}
+
+#users {
+    grid-template-columns: repeat(3fr);
+    display: grid;
 }
 
 h1 {
@@ -22,21 +32,26 @@ label {
 
 input, 
 button {
-    font-family: 'Times';
     font-size: 30px;
-    text-align: center;
 }
 
 button {
     border: none;
     background-color: white;
     color: black;
-    padding: 5px 5px;
+    padding: 5px 20px;
     font-weight: bold;
     display: inline-block;
+    border-spacing: 10px;
 }
 
 p {
     font-style: bold;
     font-size: 30px;
+}
+
+ul {
+    height: 100px;
+    width: 400px;
+    font-size: 20px;
 }

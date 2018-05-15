@@ -13,23 +13,24 @@
 
     <form id="userForm">
         <p>
-            <label for="userName" >Name: </label>
-            <input name="userName" type="text" autofocus id="userName" size="50%"/>
+            <label for="userName" >Enter a Name into the Directory: </label><br>
+            <input name="userName" type="text" autofocus id="userName" size="40px"/>
         </p>
         <p>
-            <label for="age">Age:</label>
+            <label for="age">Age of the Individual:</label><br>
             <input type="number" name="age" />
         </p>
         <p>
-            <label for="favcolor">Favorite Color: </label>
+            <label for="favcolor">Favorite Color:   </label>
             <input type="color" name="favcolor" />
         </p>
-        <button type="submit">Add</button>
-        <button type="reset">Reset</button>
-
+        <button type="submit">Add to Directory</button>
+        <button type="reset">Reset Current User Info</button>
+        <div id="users"></div>
+        <br>
     </form>
-    <br>
-    <div id="users"></div>
+
+
 
     <script src="index.js"></script>
 </body>
