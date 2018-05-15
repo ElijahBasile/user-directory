@@ -9,19 +9,15 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1 class="heading1">Welcome, to the Matrix</h1>
+    <h1 class="heading1">User Directory</h1>
 
     <form>
-        <input name="headingChange" type="text" id="headingChange" size="50%"/>
+        <label for="headingChange" >Name: </label>
+        <input name="headingChange" type="text" autofocus id="headingChange" size="50%"/>
+        <button type="submit">Go</button>
     </form>
-    
-    <br><br>
 
-    <button>Click Here to Change Your Destiny</button>
-
-    <br><br>
-
-    <p>"There is a difference between knowing the path<br>and walking the path."</p>
+    <div id="users"></div>
 
     <script src="index.js"></script>
 </body>

@@ -1,8 +1,11 @@
-const header = document.querySelector('.heading1')
-const button = document.querySelector('button')
+const form = document.querySelector('form#userForm')
+const handleSubmit = function(ev) {
+    ev.preventDefault();
+    const userName = form.userName.value;
+    const users = document.querySelector('#users')
+    heading.textContent = document.querySelector('input').value;
+    users.innerHTML += '<p>' + userName + '</p>'
+    form.userName.value = ''
 
-function changeText() {
-    document.querySelector('.heading1').textContent = document.querySelector('#headingChange').value
 }
-
-button.addEventListener('click', changeText)
+form.addEventListener('submit', handleSubmit)
