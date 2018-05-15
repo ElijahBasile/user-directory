@@ -10,14 +10,24 @@ const handleSubmit = function(ev) {
     const list = document.createElement('ul')
     const nameItem = document.createElement('li')
     nameItem.textContent = `Name: ${userName}`  
-    list.appendChild(nameItem)
+ 
 
     const ageItem = document.createElement('li')
     ageItem.textContent = `Age: ${age}`
-    list.appendChild(ageItem)
+
 
     const colorItem = document.createElement('li')
-    colorItem = `Favorite Color: ${favcolor}`
+    colorItem.textContent = 'Favorite Color:'
+
+    const colorDiv = document.createElement('div')
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    color.style.backgroundColor = favcolor
+    
+    colorItem.appendChild(colorDiv)
+
+    list.appendChild(nameItem)
+    list.appendChild(ageItem)
     list.appendChild(colorItem)
 
     users.appendChild(list)
