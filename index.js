@@ -15,7 +15,6 @@ const renderListItem = function(item) {
         }
         return listItem;
     }
-
 }
 const renderList = function(userName,age,favcolor) {
     const list = document.createElement('ul')
@@ -52,6 +51,5 @@ const handleSubmit = function(ev) {
     }
     form.reset()
     form.userName.focus()
-
 }
 form.addEventListener('submit', handleSubmit)
