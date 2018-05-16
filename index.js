@@ -1,32 +1,21 @@
 const form = document.querySelector('#userForm')
-const renderListItem = function(item) {
-    if (item.charAt(0) === '#') {
-        const listItem = document.createElement('li')
-        listItem.textContent = 'Favorite Color:'
-        listItem.appendChild(renderColor(item))
-        return listItem;
-    } else {
-        const listItem = document.createElement('li')
-        if(isNaN(parseInt(item))) {
-        listItem.textContent = `Name: ${item}`  
-        }
-        else {
-        listItem.textContent = `Age: ${item}` 
-        }
-        return listItem;
+const renderListItem = function(label, item) {
+    const listItem = document.createElement('li')
+    listItem.textContent = `${label}: `
+    try{
+        listItem.appendChild(item)
+    } catch(e) {
+        listItem.textContent += `${item}` 
     }
+    return listItem;
 }
-const renderList = function(userName,age,favcolor) {
+const renderList = function(data) {
     const list = document.createElement('ul')
-
-    list.appendChild(renderListItem(userName))
-    if (age !== '') {
-        list.appendChild(renderListItem(age))
-    }
-    if (favcolor !== '') {
-        list.appendChild(renderListItem(favcolor))
-    }
-    return list;
+    Object.keys(data).map(function(label) {
+        const item = renderListItem(label, data[label])
+        list.appendChild(item)
+    })
+    return list
 }
 const renderColor = function(favcolor) {
     const colorDiv = document.createElement('div')
@@ -38,17 +27,17 @@ const renderColor = function(favcolor) {
 const handleSubmit = function(ev) {
     ev.preventDefault();
     const form = ev.target
-    const userName = form.userName.value
-    const users = document.querySelector('#users')
-    const age = form.age.value;
-    const favcolor = form.favcolor.value;
-    if(userName !== '' && isNaN(parseInt(userName))){
-        warning.textContent = ''
-        users.appendChild(renderList(userName,age,favcolor));
-    } else {
-        const warning = document.querySelector('#warning')
-        warning.textContent = 'Please enter a valid name for the directory.'
+    const user = {
+        'Name': form.userName.value,
+        'Age': form.age.value,
+        'Favorite Color': renderColor(form.favcolor.value),
     }
+    
+    
+    const list = renderList(user)
+    const users = document.querySelector('#users')
+    users.appendChild(list)
+
     form.reset()
     form.userName.focus()
 }
